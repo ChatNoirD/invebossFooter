@@ -1,0 +1,301 @@
+@import url(../fonts/Montserrat/stylesheet.css);
+
+$centring: 0 auto;
+$standart-width: 1280px;
+@mixin flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-column {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+@mixin list-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #D2D3D6;
+    text-decoration: none;
+}
+@mixin active-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #D2D3D6;
+    text-decoration: none;
+}
+@mixin list-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #D2D3D6;
+    text-transform: uppercase;
+}
+@mixin button-text {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+@mixin button-style {
+    width: 280px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #67DEBC;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+body {
+    margin: 0 auto;
+}
+footer {
+    background-color: #181C2F;
+    margin: 0 auto;
+}
+.footer_container {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+.footer_emailForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    padding: 30px 0;
+}
+.footer_emailForm_info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 44%;
+    .footer_emailText-pad {
+        display: none;
+    }
+}
+.footer_emailForm_info p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #D2D3D6;
+}
+.footer_emailForm_info img {
+    width: 31px;
+    height: 22px;
+}
+.footer_telegram {
+    @include flex-row;
+}
+.footer_telegram-info {
+    @include flex-row;
+    width: 73%;
+    p {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: #D2D3D6;
+    }
+    img {
+        width: 33px;
+        height: 33px;
+    }
+}
+.footer_telegram-button {
+    @include button-style;
+    @include button-text;
+}
+.footer_form {
+    width: 50%;
+    @include flex-row;
+}
+.email {
+    width: 280px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+.email::placeholder {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 27px;
+    color: #8B8D97;
+}
+.submit {
+    @include button-style;
+    @include button-text;
+}
+.string {
+    width: $standart-width;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 50px auto 50px auto;
+}
+.footer_contain {
+    width: 100%;
+    @include flex-row;
+    align-items: flex-start;
+}
+.copyrights {
+    margin: 50px auto 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+    color: #A4A4A4;
+}
+.footer_logoAndLinks {
+    @include flex-column;
+    width: 215px;
+    height: 200px;
+    P {
+        @include list-text;
+        margin: 0;
+    }
+    ul {
+        width: 190px;
+        @include flex-row;
+        align-items: flex-end;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            opacity: 60%;
+        }
+    }
+}
+.footer_services {
+    @include flex-column;
+    height: 200px;
+    h3 {
+        @include list-title;
+        margin: 0;
+    }
+    ul {
+        list-style-type: none;
+        @include flex-column;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+        li {
+            padding-bottom: 9px;
+            a {
+                @include list-text;
+            }
+        }
+    }
+}
+.footer_conpanyAndContacts {
+    @include flex-column;
+    height: 250px;
+    .footer_conpanyAndContacts_company {
+        @include flex-column;
+        height: 100px;
+        h3 {
+            @include list-title;
+            margin: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                padding-bottom: 9px;
+                a {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #D2D3D6;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .footer_conpanyAndContacts_contacts {
+        @include flex-column;
+        height: 100px;
+        h3 {
+            @include list-title;
+            margin: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                padding-bottom: 9px;
+                a {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #D2D3D6;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.footer_otherLinks {
+    @include flex-column;
+    height: 190px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+        padding-bottom: 9px;
+        a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            line-height: 21px;
+            color: #D2D3D6;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    }
+}
+.footer_telegText-pad {
+    display: none;
+}
+.footer_link:hover {
+    border-bottom: 1px solid #67DEBC;
+}
+
+.footer_link:active {
+    a {
+        @include active-text;
+    }
+}
+
+.footer_socialLink:hover {
+    opacity: 0.1;
+}
+.hover_btn {
+    font-weight: 500;
+}
+.clicked_btn {
+    box-shadow: inset 1px 1px 3px #000000;
+    font-weight: 600;
+}
+.footer_block-1024 {
+    display: none;
+}
